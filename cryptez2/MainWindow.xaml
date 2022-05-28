@@ -1,0 +1,24 @@
+﻿<Window x:Class="cryptez2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cryptez2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Button x:Name="btn" Content="Generate" HorizontalAlignment="Left" Margin="4,97,0,0" VerticalAlignment="Top"/>
+        <StackPanel x:Name="stackPanel" Margin="0,0,675,342">
+            <RadioButton x:Name="ces_btn" GroupName="cipherGroup" Content="Cesaer cipher"/>
+            <RadioButton x:Name="vig_btn" GroupName="cipherGroup" Content="Vigenere cipher"/>
+            <RadioButton x:Name="bas_btn" GroupName="cipherGroup" Content="Base32 cipher"/>
+            <RadioButton x:Name="atb_btn" GroupName="cipherGroup" Content="Atbash cipher"/>
+        </StackPanel>
+        <TextBox x:Name="vig_tbx" HorizontalAlignment="Left" Margin="4,139,0,0" TextWrapping="Wrap" Text="lemon" VerticalAlignment="Top" Width="141" Visibility="Hidden"/>
+        <TextBox x:Name="ces_tbx" HorizontalAlignment="Left" Margin="4,139,0,0" TextWrapping="Wrap" Text="enter encryption shift" VerticalAlignment="Top" Width="141" Visibility="Hidden"/>
+        <TextBox x:Name="pln_tbx"  HorizontalAlignment="Left" Margin="74,97,0,0" TextWrapping="Wrap" Text="enter plain text" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.28,0.203" Visibility="Visible"/>
+        <Label Content="NO SPACES IN PHRASES" HorizontalAlignment="Left" Margin="105,12,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
