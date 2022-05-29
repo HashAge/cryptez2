@@ -8,6 +8,16 @@ namespace cryptez2
 {
     internal class Ciphers
     {
+        public static int nod(int a, int b)
+        {
+            if (a == b)
+                return a;
+            else
+                if (a > b)
+                return nod(a - b, b);
+            else
+                return nod(b - a, a);
+        }
         public string cesaer_method(string plain, int shift)
         {
             plain.ToLower();
@@ -59,7 +69,7 @@ namespace cryptez2
             plain = new string(mes_char);
             return plain;
         }
-        public string base32_method(string plain)
+        public string base32_method(string plain)//ЗНАКИ РАВНО ДОБАВИТЬ
         {
             byte[] mes_byte = Encoding.ASCII.GetBytes(plain);
             const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
@@ -72,15 +82,27 @@ namespace cryptez2
                 dualbyte = 0x1f & (dualbyte >> (16 - bitIndex % 8 - 5));
                 output += alphabet[dualbyte];
             }
+
             return output;
         }
-     /*   public string atbash_method(string plain)
+        public string atbash_method(string plain)
         {
-            string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            char[] mes = plain.ToCharArray();
+            for (int i = 0; i < plain.Length; i++) mes[i] = (char)(122 - mes[i] + 97); 
+            return new string(mes);
+        }
+        public string affine_method(int a,int b,string plain)
+        {
             char[] chr_arr = plain.ToCharArray();
-            for (int i = 0; i < plain.Length; i++) chr_arr[i] = (char)(int)(alphabet[alphabet.Length] - chr_arr[i]);
-            plain = new string(chr_arr);
-            return plain;
-        }*/
+            if (nod(a, 26) == 1)
+            {
+                for (int i = 0; i < plain.Length; i++) {
+                    chr_arr[i] = (char)((a * (plain[i] - 'a') + b) % 26 + 'a');
+                }
+            }          
+            return new string(chr_arr);
+        }
+        
+
+        }
     }
-}

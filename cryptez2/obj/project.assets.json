@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alex_peyot\\source\\repos\\cryptez2\\cryptez2\\cryptez2.csproj",
+      "projectUniqueName": "C:\\cryptez2\\cryptez2\\cryptez2.csproj",
       "projectName": "cryptez2",
-      "projectPath": "C:\\Users\\alex_peyot\\source\\repos\\cryptez2\\cryptez2\\cryptez2.csproj",
+      "projectPath": "C:\\cryptez2\\cryptez2\\cryptez2.csproj",
       "packagesPath": "C:\\Users\\alex_peyot\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alex_peyot\\source\\repos\\cryptez2\\cryptez2\\obj\\",
+      "outputPath": "C:\\cryptez2\\cryptez2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NysyDSldJX9gFrJXHM2n0If/KOiP1CyWsMF3a+0EALmoojUT+p89aruGhm/AfjYqaApt26cd+qvY25v71g0JHg==",
+  "dgSpecHash": "w4ATAeS/zbVH+7v9wopw4OpR+wZyB9my23B3963aGt8vZM/bw632oqa1hNpZF1kf6AITjs4KOQ0M7jTlBREmGA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alex_peyot\\source\\repos\\cryptez2\\cryptez2\\cryptez2.csproj",
+  "projectFilePath": "C:\\cryptez2\\cryptez2\\cryptez2.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -5,20 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cryptez2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title=" " Height="305" Width="478" Background="#FF0C2D85">
     <Grid>
-
-        <Button x:Name="btn" Content="Generate" HorizontalAlignment="Left" Margin="4,97,0,0" VerticalAlignment="Top"/>
-        <StackPanel x:Name="stackPanel" Margin="0,0,675,342">
-            <RadioButton x:Name="ces_btn" GroupName="cipherGroup" Content="Cesaer cipher"/>
-            <RadioButton x:Name="vig_btn" GroupName="cipherGroup" Content="Vigenere cipher"/>
-            <RadioButton x:Name="bas_btn" GroupName="cipherGroup" Content="Base32 cipher"/>
-            <RadioButton x:Name="atb_btn" GroupName="cipherGroup" Content="Atbash cipher"/>
+        <Image Margin="269,99,16,138" Stretch="Fill" Source="pack://siteoforigin:,,,/logo.png"/>
+        <Button x:Name="btn" Content="Generate" HorizontalAlignment="Left" Margin="4,115,0,0" VerticalAlignment="Top" Background="#FF179C09" Foreground="Yellow"/>
+        <StackPanel x:Name="stackPanel" Margin="0,0,355,205">
+            <RadioButton x:Name="ces_btn" GroupName="cipherGroup" Content="Cesaer cipher" Foreground="White"/>
+            <RadioButton x:Name="vig_btn" GroupName="cipherGroup" Content="Vigenere cipher" Foreground="White"/>
+            <RadioButton x:Name="atb_btn" GroupName="cipherGroup" Content="Atbash cipher" Foreground="White"/>
+            <RadioButton x:Name="bas_btn" GroupName="cipherGroup" Content="BASE32 cipher" Foreground="White"/>
+            <RadioButton x:Name="afn_btn" GroupName="cipherGroup" Content="Affine cipher" Foreground="White"/>
         </StackPanel>
-        <TextBox x:Name="vig_tbx" HorizontalAlignment="Left" Margin="4,139,0,0" TextWrapping="Wrap" Text="lemon" VerticalAlignment="Top" Width="141" Visibility="Hidden"/>
-        <TextBox x:Name="ces_tbx" HorizontalAlignment="Left" Margin="4,139,0,0" TextWrapping="Wrap" Text="enter encryption shift" VerticalAlignment="Top" Width="141" Visibility="Hidden"/>
-        <TextBox x:Name="pln_tbx"  HorizontalAlignment="Left" Margin="74,97,0,0" TextWrapping="Wrap" Text="enter plain text" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.28,0.203" Visibility="Visible"/>
-        <Label Content="NO SPACES IN PHRASES" HorizontalAlignment="Left" Margin="105,12,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="pln_tbx"  HorizontalAlignment="Left" Margin="74,115,0,0" TextWrapping="Wrap" Text="enter plain text" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.28,0.203" Visibility="Visible" Background="Black" Foreground="White"/>
+        <GroupBox Name="argument_list" Margin="4,142,336,102" BorderThickness="0" Padding="0" Width="Auto">
+            <Grid Height="16">
+                <TextBox x:Name="afn_tbx_a" TextWrapping="Wrap" Text="11" Width="45" Visibility="Hidden" Margin="13,0,68,0" Background="Black" Foreground="White"/>
+                <TextBox x:Name="afn_tbx_b" TextWrapping="Wrap" Text="7" Width="44" Visibility="Hidden" Margin="63,0,19,0" Background="Black" Foreground="White"/>
+                <TextBox x:Name="vig_tbx" TextWrapping="Wrap" Text="lemon" Width="141" Visibility="Hidden" Background="Black" Foreground="White"/>
+                <TextBox x:Name="ces_tbx" TextWrapping="Wrap" Text="5" Width="40" Visibility="Hidden" Background="Black" Foreground="White"/>
+            </Grid>
+        </GroupBox>
+        
 
     </Grid>
 </Window>

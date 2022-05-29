@@ -23,7 +23,8 @@ namespace cryptez2
             btn.Click += btn_click;
             ces_btn.Click += switch_click;
             vig_btn.Click += switch_click;
-            bas_btn.Click += switch_click;
+            atb_btn.Click += switch_click;
+            afn_btn.Click += switch_click;
         }
         private void switch_click(object sender, RoutedEventArgs e)
         {        
@@ -37,17 +38,25 @@ namespace cryptez2
                 vig_tbx.Visibility = Visibility.Visible;
                 ces_tbx.Visibility = Visibility.Hidden;
             }
-            if(bas_btn.IsChecked == true)
+            if(ces_btn.IsChecked == false && vig_btn.IsChecked == false)
             {
                 vig_tbx.Visibility = Visibility.Hidden;
                 ces_tbx.Visibility = Visibility.Hidden;
             }
+            if (afn_btn.IsChecked == true) afn_tbx_a.Visibility = afn_tbx_b.Visibility = Visibility.Visible;
+            else afn_tbx_a.Visibility = afn_tbx_b.Visibility = Visibility.Hidden;
 
         }
         private void btn_click(object sender, RoutedEventArgs e)
         {
-            Ciphers cip = new Ciphers(); string plain = pln_tbx.Text;
+            
+            Ciphers cip = new Ciphers();
+            int afna = Convert.ToInt32(afn_tbx_a.Text);
+            int afnb = Convert.ToInt32(afn_tbx_b.Text);
+            string plain = pln_tbx.Text;
+            plain = plain.ToLower().Replace(" ", "");
             string vigshift = vig_tbx.Text;
+            vigshift = vigshift.ToLower().Replace(" ","");
             string cesshift = ces_tbx.Text;
             if (ces_btn.IsChecked == true) {
                 if (ces_tbx.Text == "" || Int32.TryParse(cesshift, out int a) == false) MessageBox.Show("Enter a valid value!");
@@ -57,11 +66,14 @@ namespace cryptez2
                 if (vig_tbx.Text == "") MessageBox.Show("Enter something!");
                 else pln_tbx.Text = cip.vigenere_method(plain.Trim(),vigshift.Trim());
             }
+            if (atb_btn.IsChecked == true) pln_tbx.Text = cip.atbash_method(plain);
             if (bas_btn.IsChecked == true) pln_tbx.Text = cip.base32_method(plain);
-            if (atb_btn.IsChecked == true) MessageBox.Show("In progress");
+            if (afn_btn.IsChecked == true) {               
+            if (!int.TryParse(afn_tbx_a.Text, out int y) || afn_tbx_a.Text == "" || afn_tbx_b.Text == "") MessageBox.Show("Enter a valid value");
+            else pln_tbx.Text = cip.affine_method(afna, afnb, plain);
+            }
             //   if (vig_btn.IsChecked == true) pln_tbx.Text = cip.vigenere_method();
             //   if (bas_btn.IsChecked == true) pln_tbx.Text = cip.base32_method();
-        } 
-
+        }
     }
 }
